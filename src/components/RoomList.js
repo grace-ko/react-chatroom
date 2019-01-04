@@ -32,14 +32,16 @@ class RoomList extends Component {
   render() {
     return (
       <div>
+      <p>hi</p>
         <h1>Bloc Chat</h1>
-        <div>{this.state.rooms.map(data => <p key={data.key}>{data.name}</p>)}</div>
+        <div>{this.state.rooms.map(data => <p key={data.key} onClick={this.props.activeRoom} value={data.name}>{data.name}</p>)}</div>
         <form id="create-room" onSubmit={(e) => this.createRoom(e)}>
           <label>Create a Room
             <input value={this.state.newRoom} onChange={(e) => this.handleChange(e)}/>
           </label>
           <input type="submit" />
         </form>
+
       </div>
     );
   }
